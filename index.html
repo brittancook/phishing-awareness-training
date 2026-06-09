@@ -28,26 +28,26 @@ input{padding:8px}
 </header>
 <main>
 
-<section class="screen active"><div class="hero"><h1>Think Before You Click</h1><p>Learn how to recognize phishing attacks and protect your information.</p></div></section>
-<section class="screen"><div class="card"><h2>How To Use</h2><p>15-20 minutes. Complete activities and assessments.</p></div></section>
+<section class="screen active"><div class="hero"><h1>Think Before You Click</h1><p>Every day, cybercriminals use email, text messages, phone calls, and fake websites to trick people into revealing information, transferring money, or compromising workplace systems. Learn how to recognize phishing attempts, evaluate evidence, and respond safely.</p></div></section>
+<section class="screen"><div class="card"><h2>How To Use</h2><p><strong>Estimated Time:</strong> 20–25 minutes</p><ul><li>Learn how phishing attacks work</li><li>Identify common phishing tactics and warning signs</li><li>Analyze realistic workplace scenarios</li><li>Practice evaluating suspicious messages</li><li>Complete a final assessment to demonstrate mastery</li></ul></div></section>
 <section class="screen"><div class="card"><h2>Learning Objectives</h2><ul><li>Define phishing</li><li>Identify indicators</li><li>Distinguish messages</li><li>Apply verification</li></ul></div></section>
-<section class="screen"><div class="card"><h2>Why Phishing Matters</h2><p>Identity theft, payroll fraud, account compromise, and financial loss.</p></div></section>
+<section class="screen"><div class="card"><h2>Why Phishing Matters</h2><p><strong>Workplace Example:</strong> An HR employee receives an urgent request to change an employee’s direct deposit information before payroll closes. The request appears legitimate, but it is fraudulent. The employee’s paycheck is redirected to a criminal-controlled account.</p><h3>Consequences for Individuals</h3><ul><li>Identity theft</li><li>Financial fraud</li><li>Account compromise</li></ul><h3>Consequences for Organizations</h3><ul><li>Payroll fraud</li><li>Data breaches</li><li>Operational disruption</li><li>Reputational damage</li></ul></div></section>
 <section class="screen"><div class="card"><h2>Poll</h2>
 <p>Have you ever received a suspicious email?</p>
 <button onclick="msg('poll','Many people receive phishing emails every week.')">Yes</button>
 <button onclick="msg('poll','Phishing attempts are extremely common. Stay alert.')">No</button>
 <button onclick="msg('poll','This module will help you recognize them.')">Not Sure</button>
 <div id="poll"></div></div></section>
-<section class="screen"><div class="card"><h2>What Is Phishing?</h2><p>Attempts to trick users into taking unsafe actions.</p></div></section>
-<section class="screen"><div class="card"><h2>Types of Phishing</h2><p>Email, Spear Phishing, Smishing, Vishing.</p></div></section>
+<section class="screen"><div class="card"><h2>What Is Phishing?</h2><p>Phishing is a social engineering attack that attempts to trick people into revealing information, clicking malicious links, opening harmful attachments, transferring money, or taking other unsafe actions.</p><h3>How Phishing Works</h3><ol><li>Attacker impersonates a trusted source</li><li>Message creates urgency or trust</li><li>Recipient takes action</li><li>Information, money, or access is compromised</li></ol></div></section>
+<section class="screen"><div class="card"><h2>Types of Phishing</h2><h3>Email Phishing</h3><p>Mass-distributed phishing emails.</p><h3>Spear Phishing</h3><p>Targeted messages aimed at specific individuals.</p><h3>Smishing</h3><p>Phishing attacks delivered through text messages.</p><h3>Vishing</h3><p>Phishing attacks delivered through phone calls.</p></div></section>
 <section class="screen"><div class="card"><h2>Formative Assessment #1</h2>
-<p>Which phishing type uses text messages?</p>
+<p>You receive a text message stating that your package delivery failed and that you must click a link within 24 hours to avoid cancellation. What type of phishing attack is being used?</p>
 <button onclick="checkAnswer('f1',false)">Email Phishing</button>
 <button onclick="checkAnswer('f1',false)">Spear Phishing</button>
 <button onclick="checkAnswer('f1',true)">Smishing</button>
 <button onclick="checkAnswer('f1',false)">Vishing</button>
 <div id="f1"></div></div></section>
-<section class="screen"><div class="card"><h2>Warning Signs</h2><ul><li>Urgency</li><li>Suspicious Sender</li><li>Attachments</li></ul></div></section>
+<section class="screen"><div class="card"><h2>Warning Signs</h2><h3>STOP and CHECK</h3><ul><li><strong>Urgency:</strong> Pressure to act immediately</li><li><strong>Unexpected Request:</strong> Especially involving money or credentials</li><li><strong>Suspicious Sender:</strong> Misspellings or unusual domains</li><li><strong>Links & Attachments:</strong> Unexpected files or destinations</li><li><strong>Sensitive Information Requests:</strong> Passwords or financial information</li><li><strong>Independent Verification:</strong> Verify through trusted channels</li></ul></div></section>
 <section class="screen"><div class="card"><div class="casefile">CASE FILE #1 Maria</div>
 <img src="images/maria-email.jpg" alt="Maria email">
 <p>Which indicator most strongly suggests this message may be phishing?</p>
@@ -57,11 +57,11 @@ input{padding:8px}
 <button onclick="checkAnswer('maria',false)">References a bank</button>
 <div id="maria"></div></div></section>
 <section class="screen"><div class="card"><h2>Formative Assessment #2</h2>
-<p>A message demands immediate action to avoid account suspension. Which warning sign is present?</p>
-<button onclick="checkAnswer('f2',true)">Urgency</button>
-<button onclick="checkAnswer('f2',false)">Routine update</button>
-<button onclick="checkAnswer('f2',false)">Customer service</button>
-<button onclick="checkAnswer('f2',false)">Newsletter</button>
+<p>An email claims your Microsoft account will be disabled within one hour unless you verify your password. Which warning sign is most concerning?</p>
+<button onclick="checkAnswer('f2',false)">Company logo</button>
+<button onclick="checkAnswer('f2',false)">Instructions in the email</button>
+<button onclick="checkAnswer('f2',true)">Urgency and pressure to act quickly</button>
+<button onclick="checkAnswer('f2',false)">Mention of Microsoft</button>
 <div id="f2"></div></div></section>
 <section class="screen"><div class="card"><div class="casefile">Package Investigation</div>
 <div style="display:flex;gap:20px;flex-wrap:wrap">
@@ -91,9 +91,9 @@ input{padding:8px}
 <button onclick="checkAnswer('david',false)">Forward it to coworkers</button>
 <div id="david"></div></div></section>
 <section class="screen"><div class="card"><h2>Formative Assessment #3</h2>
-<p>What is the safest action when you receive an unexpected attachment?</p>
+<p>You receive an unexpected attachment titled "Updated Benefits Information." What should you do first?</p>
 <button onclick="checkAnswer('f3',false)">Open it immediately</button>
-<button onclick="checkAnswer('f3',true)">Verify the sender first</button>
+<button onclick="checkAnswer('f3',true)">Verify the request through a trusted channel</button>
 <button onclick="checkAnswer('f3',false)">Forward it</button>
 <button onclick="checkAnswer('f3',false)">Ignore security warnings</button>
 <div id="f3"></div></div></section>
@@ -129,52 +129,58 @@ input{padding:8px}
 <div id="takeaway"></div>
 </div></section>
 <section class="screen"><div class="card"><h2>Review Challenge</h2>
-<p>Scenario 1: Maria's banking email is:</p>
-<button onclick="checkAnswer('review1',true)">Phishing</button>
-<button onclick="checkAnswer('review1',false)">Legitimate</button>
+<p><strong>Scenario 1:</strong> Which indicator should concern Maria most?</p>
+<button onclick="checkAnswer('review1',false)">Professional formatting</button>
+<button onclick="checkAnswer('review1',false)">Company logo</button>
+<button onclick="checkAnswer('review1',true)">Urgent account suspension warning</button>
+<button onclick="checkAnswer('review1',false)">Formal greeting</button>
 <div id="review1"></div>
 <hr>
-<p>Scenario 2: The suspicious package email is:</p>
-<button onclick="checkAnswer('review2',true)">Phishing</button>
-<button onclick="checkAnswer('review2',false)">Legitimate</button>
+<p><strong>Scenario 2:</strong> Which piece of evidence should be reviewed first?</p>
+<button onclick="checkAnswer('review2',false)">Email colors</button>
+<button onclick="checkAnswer('review2',true)">Sender information and destination links</button>
+<button onclick="checkAnswer('review2',false)">Message length</button>
+<button onclick="checkAnswer('review2',false)">Branding</button>
 <div id="review2"></div>
 <hr>
-<p>Scenario 3: David's unexpected attachment is:</p>
-<button onclick="checkAnswer('review3',true)">Suspicious</button>
-<button onclick="checkAnswer('review3',false)">Safe</button>
+<p><strong>Scenario 3:</strong> What is the safest next action?</p>
+<button onclick="checkAnswer('review3',false)">Open attachment</button>
+<button onclick="checkAnswer('review3',false)">Save attachment</button>
+<button onclick="checkAnswer('review3',true)">Verify through payroll using a trusted channel</button>
+<button onclick="checkAnswer('review3',false)">Forward email</button>
 <div id="review3"></div>
 </div></section>
 <section class="screen"><div class="card"><h2>Summative Assessment</h2>
-<p>Answer the questions below and then calculate your score.</p>
+<p>Passing Score: 80% (8 of 10 correct)<br><br>Answer the questions below and then calculate your score.</p>
 <div id="sumWrap">
-<label>1. What is phishing?</label><br>
-<select id="q1"><option>Choose</option><option value="1">An attempt to trick users into revealing information</option><option>A firewall</option><option>Antivirus software</option><option>A backup process</option></select><br><br>
+<label>1. Your Microsoft account will be disabled in 30 minutes unless you verify your credentials. What should you do?</label><br>
+<select id="q1"><option>Choose</option><option value="1">Verify through an official company channel</option><option>Click the link immediately</option><option>Reply to the email</option><option>Ignore all future IT emails</option></select><br><br>
 
-<label>2. Which phishing type uses text messages?</label><br>
+<label>2. You receive a text message stating that your package delivery failed and that you must click a link within 24 hours to avoid cancellation. What type of phishing attack is being used?</label><br>
 <select id="q2"><option>Choose</option><option>Email</option><option>Spear</option><option value="1">Smishing</option><option>Vishing</option></select><br><br>
 
-<label>3. Which is a phishing indicator?</label><br>
-<select id="q3"><option>Choose</option><option value="1">Urgency</option><option>Routine greeting</option><option>Company logo</option><option>Signature block</option></select><br><br>
+<label>3. A manager emails requesting gift cards while traveling. What should you do first?</label><br>
+<select id="q3"><option>Choose</option><option value="1">Verify the request using an independent communication method</option><option>Purchase the cards immediately</option><option>Reply with gift card numbers</option><option>Forward the request</option></select><br><br>
 
-<label>4. What should Maria do?</label><br>
-<select id="q4"><option>Choose</option><option>Click the link</option><option value="1">Visit the bank website independently</option><option>Reply</option><option>Ignore</option></select><br><br>
+<label>4. An unexpected payroll update request arrives by email. What is the safest action?</label><br>
+<select id="q4"><option>Choose</option><option>Click the link</option><option value="1">Verify with payroll through a trusted channel</option><option>Update immediately</option><option>Reply asking for more details</option><option>Save the email</option></select><br><br>
 
-<label>5. What should David do?</label><br>
-<select id="q5"><option>Choose</option><option>Open attachment</option><option value="1">Verify with payroll first</option><option>Forward it</option><option>Save it</option></select><br><br>
+<label>5. A caller claiming to be IT support asks for your password. What type of phishing attack is occurring?</label><br>
+<select id="q5"><option>Choose</option><option>Smishing</option><option>Spear Phishing</option><option value="1">Vishing</option><option>Email Phishing</option></select><br><br>
 
-<label>6. Which package email appeared legitimate?</label><br>
-<select id="q6"><option>Choose</option><option>Email A</option><option value="1">Email B</option></select><br><br>
+<label>6. Which warning sign should cause the greatest concern?</label><br>
+<select id="q6"><option>Choose</option><option>Professional formatting</option><option value="1">Request for sensitive information</option><option>Company logo</option><option>Formal language</option></select><br><br>
 
-<label>7. What is the first STOP step?</label><br>
-<select id="q7"><option>Choose</option><option value="1">Stop</option><option>Observe</option><option>Proceed</option><option>Report</option></select><br><br>
+<label>7. A suspicious email includes an unexpected attachment. What should you do?</label><br>
+<select id="q7"><option>Choose</option><option value="1">Verify before interacting with it</option><option>Open it</option><option>Forward it</option><option>Ignore security concerns</option></select><br><br>
 
-<label>8. Safest verification method?</label><br>
+<label>8. What is the most reliable verification method?</label><br>
 <select id="q8"><option>Choose</option><option>Reply to email</option><option value="1">Visit official website directly</option><option>Click link</option><option>Call email number</option></select><br><br>
 
-<label>9. What should you do with suspicious messages?</label><br>
+<label>9. You suspect a message is phishing. What should you do?</label><br>
 <select id="q9"><option>Choose</option><option>Ignore</option><option value="1">Report to IT/security</option><option>Forward widely</option><option>Post online</option></select><br><br>
 
-<label>10. Best summary?</label><br>
+<label>10. Which action best demonstrates phishing awareness?</label><br>
 <select id="q10"><option>Choose</option><option>Click first</option><option value="1">Pause, verify, and report</option><option>Trust logos</option><option>Ignore email</option></select><br><br>
 
 <button onclick="gradeSummative()">Submit Assessment</button>
@@ -217,7 +223,16 @@ let pass=score>=80;
 document.getElementById('quiz').innerHTML='<div class="feedback"><strong>Score: '+score+'%</strong><br>Status: '+(pass?'PASS':'NOT YET MASTERED')+'<br><button onclick="location.reload()">Retake Assessment</button></div>';
 }
 function checkAnswer(id,correct){
+const fb={
+f1:['✓ Correct. Smishing attacks use text messages and often exploit common situations such as package deliveries.','⚠ Not quite. This scenario is delivered through a text message, making it smishing.'],
+f2:['✓ Correct. Urgency is one of the most common phishing tactics because it pressures users to act before verifying.','⚠ Not quite. The biggest concern is the pressure to act immediately.'],
+f3:['✓ Correct. Verification through a trusted channel reduces the risk of malware and fraud.','⚠ Not quite. Unexpected attachments should be verified before interacting with them.'],
+review1:['✓ Correct. Urgent threats are a classic phishing tactic.','⚠ Not quite. The urgency and threat of account suspension are the strongest indicators.'],
+review2:['✓ Correct. Sender details and links provide the most useful evidence.','⚠ Not quite. Start by evaluating sender information and destination links.'],
+review3:['✓ Correct. Independent verification is the safest response.','⚠ Not quite. Verification through payroll is safer than interacting with the email.']
+};
 let msg=correct?'✓ Correct. Well done.':'⚠ Not quite. Review the content and try again.';
+if(fb[id]) msg=correct?fb[id][0]:fb[id][1];
 if(id==='stopq' && correct){msg='✓ Correct. The STOP process begins by pausing before taking action.';}
 if(id==='takeaway' && correct){msg='✓ Correct. Effective phishing prevention depends on pausing, verifying, and reporting.';}
 document.getElementById(id).innerHTML='<div class="feedback">'+msg+'</div>';
