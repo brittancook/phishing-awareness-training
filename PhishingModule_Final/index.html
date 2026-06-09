@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phishing Module v1.3 Beta</title>
+<style>
+:root{--navy:#081120;--teal:#14b8a6;--cyan:#38bdf8}
+body{margin:0;font-family:Arial,sans-serif;background:#eef5f9;color:#111827}
+header{background:linear-gradient(135deg,#081120,#12304f);color:#fff;padding:16px;position:sticky;top:0}
+.progress{height:10px;background:#334155;border-radius:999px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan))}
+main{max-width:1100px;margin:auto;padding:24px}
+.screen{display:none}.active{display:block}
+.hero,.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hero{background:linear-gradient(135deg,#0f172a,#134e4a);color:#fff;text-align:center}
+.casefile{border-left:6px solid #f59e0b;background:#fffbeb;padding:12px;border-radius:8px;margin-bottom:12px}
+button{padding:10px 14px;border:none;border-radius:8px;background:#0f172a;color:#fff;margin:4px}
+.feedback{background:#ecfeff;padding:8px;border-radius:8px;margin-top:8px}
+.nav{display:flex;justify-content:space-between;margin-top:20px}
+img{max-width:100%;border-radius:8px}
+input{padding:8px}
+</style>
+</head>
+<body>
+<header>
+<div id="label"></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</header>
+<main>
+
+<section class="screen active"><div class="hero"><h1>Think Before You Click</h1><p>Learn how to recognize phishing attacks and protect your information.</p></div></section>
+<section class="screen"><div class="card"><h2>How To Use</h2><p>15-20 minutes. Complete activities and assessments.</p></div></section>
+<section class="screen"><div class="card"><h2>Learning Objectives</h2><ul><li>Define phishing</li><li>Identify indicators</li><li>Distinguish messages</li><li>Apply verification</li></ul></div></section>
+<section class="screen"><div class="card"><h2>Why Phishing Matters</h2><p>Identity theft, payroll fraud, account compromise, and financial loss.</p></div></section>
+<section class="screen"><div class="card"><h2>Poll</h2>
+<p>Have you ever received a suspicious email?</p>
+<button onclick="msg('poll','Many people receive phishing emails every week.')">Yes</button>
+<button onclick="msg('poll','Phishing attempts are extremely common. Stay alert.')">No</button>
+<button onclick="msg('poll','This module will help you recognize them.')">Not Sure</button>
+<div id="poll"></div></div></section>
+<section class="screen"><div class="card"><h2>What Is Phishing?</h2><p>Attempts to trick users into taking unsafe actions.</p></div></section>
+<section class="screen"><div class="card"><h2>Types of Phishing</h2><p>Email, Spear Phishing, Smishing, Vishing.</p></div></section>
+<section class="screen"><div class="card"><h2>Formative Assessment #1</h2>
+<p>Which phishing type uses text messages?</p>
+<button onclick="checkAnswer('f1',false)">Email Phishing</button>
+<button onclick="checkAnswer('f1',false)">Spear Phishing</button>
+<button onclick="checkAnswer('f1',true)">Smishing</button>
+<button onclick="checkAnswer('f1',false)">Vishing</button>
+<div id="f1"></div></div></section>
+<section class="screen"><div class="card"><h2>Warning Signs</h2><ul><li>Urgency</li><li>Suspicious Sender</li><li>Attachments</li></ul></div></section>
+<section class="screen"><div class="card"><div class="casefile">CASE FILE #1 Maria</div>
+<img src="images/maria-email.jpg" alt="Maria email">
+<p>Which indicator most strongly suggests this message may be phishing?</p>
+<button onclick="checkAnswer('maria',false)">Professional formatting</button>
+<button onclick="checkAnswer('maria',false)">Contains a logo</button>
+<button onclick="checkAnswer('maria',true)">Urgent account suspension warning</button>
+<button onclick="checkAnswer('maria',false)">References a bank</button>
+<div id="maria"></div></div></section>
+<section class="screen"><div class="card"><h2>Formative Assessment #2</h2>
+<p>A message demands immediate action to avoid account suspension. Which warning sign is present?</p>
+<button onclick="checkAnswer('f2',true)">Urgency</button>
+<button onclick="checkAnswer('f2',false)">Routine update</button>
+<button onclick="checkAnswer('f2',false)">Customer service</button>
+<button onclick="checkAnswer('f2',false)">Newsletter</button>
+<div id="f2"></div></div></section>
+<section class="screen"><div class="card"><div class="casefile">Package Investigation</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div style="flex:1;min-width:250px"><h3>Email A</h3><img src="images/package-scam.jpg" alt="Scam"></div>
+<div style="flex:1;min-width:250px"><h3>Email B</h3><img src="images/legitimate-package.jpg" alt="Legitimate"></div>
+</div>
+<p>Which email appears legitimate?</p>
+<button onclick="checkAnswer('pkg',false)">Email A</button>
+<button onclick="checkAnswer('pkg',true)">Email B</button>
+<div id="pkg"></div></div></section>
+<section class="screen"><div class="card"><div class="casefile">Maria Decision</div>
+<p><strong>Review the evidence before making your decision.</strong></p>
+<img src="images/maria-email.jpg" alt="Maria phishing email reference">
+<p>What should Maria do next?</p>
+<button onclick="checkAnswer('md',false)">Click the link immediately</button>
+<button onclick="checkAnswer('md',false)">Reply to the sender</button>
+<button onclick="checkAnswer('md',true)">Visit the bank website independently</button>
+<button onclick="checkAnswer('md',false)">Ignore the message</button>
+<div id="md"></div></div></section>
+<section class="screen"><div class="card"><div class="casefile">David Scenario</div>
+<p><strong>Review the evidence before making your decision.</strong></p>
+<img src="images/david-payroll.jpg" alt="David payroll email reference">
+<p>What should David do?</p>
+<button onclick="checkAnswer('david',false)">Open the attachment</button>
+<button onclick="checkAnswer('david',false)">Save it for later</button>
+<button onclick="checkAnswer('david',true)">Verify with payroll first</button>
+<button onclick="checkAnswer('david',false)">Forward it to coworkers</button>
+<div id="david"></div></div></section>
+<section class="screen"><div class="card"><h2>Formative Assessment #3</h2>
+<p>What is the safest action when you receive an unexpected attachment?</p>
+<button onclick="checkAnswer('f3',false)">Open it immediately</button>
+<button onclick="checkAnswer('f3',true)">Verify the sender first</button>
+<button onclick="checkAnswer('f3',false)">Forward it</button>
+<button onclick="checkAnswer('f3',false)">Ignore security warnings</button>
+<div id="f3"></div></div></section>
+<section class="screen"><div class="card"><h2>STOP Process</h2>
+<img src="images/stop.jpg" alt="STOP process">
+<p>A message demands immediate action. What is the FIRST step in the STOP process?</p>
+<button onclick="checkAnswer('stopq',false)">Observe</button>
+<button onclick="checkAnswer('stopq',true)">Stop</button>
+<button onclick="checkAnswer('stopq',false)">Proceed</button>
+<button onclick="checkAnswer('stopq',false)">Report</button>
+<div id="stopq"></div>
+</div></section>
+<section class="screen"><div class="card"><h2>Verification Strategies</h2>
+<p>Which verification method is safest?</p>
+<button onclick="checkAnswer('verify',false)">Reply to the email</button>
+<button onclick="checkAnswer('verify',false)">Call the number in the email</button>
+<button onclick="checkAnswer('verify',true)">Visit the official website directly</button>
+<button onclick="checkAnswer('verify',false)">Click the embedded link</button>
+<div id="verify"></div></div></section>
+<section class="screen"><div class="card"><h2>Report It</h2>
+<p>You receive a suspicious message. What should you do?</p>
+<button onclick="checkAnswer('report',false)">Delete immediately</button>
+<button onclick="checkAnswer('report',false)">Forward to everyone</button>
+<button onclick="checkAnswer('report',true)">Report it to IT/security</button>
+<button onclick="checkAnswer('report',false)">Post it online</button>
+<div id="report"></div></div></section>
+<section class="screen"><div class="card"><h2>Key Takeaways</h2>
+<p>Which action best summarizes what you have learned?</p>
+<button onclick="checkAnswer('takeaway',false)">Click first, verify later</button>
+<button onclick="checkAnswer('takeaway',true)">Pause, verify, and report suspicious messages</button>
+<button onclick="checkAnswer('takeaway',false)">Ignore all emails</button>
+<button onclick="checkAnswer('takeaway',false)">Trust messages with logos</button>
+<div id="takeaway"></div>
+</div></section>
+<section class="screen"><div class="card"><h2>Review Challenge</h2>
+<p>Scenario 1: Maria's banking email is:</p>
+<button onclick="checkAnswer('review1',true)">Phishing</button>
+<button onclick="checkAnswer('review1',false)">Legitimate</button>
+<div id="review1"></div>
+<hr>
+<p>Scenario 2: The suspicious package email is:</p>
+<button onclick="checkAnswer('review2',true)">Phishing</button>
+<button onclick="checkAnswer('review2',false)">Legitimate</button>
+<div id="review2"></div>
+<hr>
+<p>Scenario 3: David's unexpected attachment is:</p>
+<button onclick="checkAnswer('review3',true)">Suspicious</button>
+<button onclick="checkAnswer('review3',false)">Safe</button>
+<div id="review3"></div>
+</div></section>
+<section class="screen"><div class="card"><h2>Summative Assessment</h2>
+<p>Answer the questions below and then calculate your score.</p>
+<div id="sumWrap">
+<label>1. What is phishing?</label><br>
+<select id="q1"><option>Choose</option><option value="1">An attempt to trick users into revealing information</option><option>A firewall</option><option>Antivirus software</option><option>A backup process</option></select><br><br>
+
+<label>2. Which phishing type uses text messages?</label><br>
+<select id="q2"><option>Choose</option><option>Email</option><option>Spear</option><option value="1">Smishing</option><option>Vishing</option></select><br><br>
+
+<label>3. Which is a phishing indicator?</label><br>
+<select id="q3"><option>Choose</option><option value="1">Urgency</option><option>Routine greeting</option><option>Company logo</option><option>Signature block</option></select><br><br>
+
+<label>4. What should Maria do?</label><br>
+<select id="q4"><option>Choose</option><option>Click the link</option><option value="1">Visit the bank website independently</option><option>Reply</option><option>Ignore</option></select><br><br>
+
+<label>5. What should David do?</label><br>
+<select id="q5"><option>Choose</option><option>Open attachment</option><option value="1">Verify with payroll first</option><option>Forward it</option><option>Save it</option></select><br><br>
+
+<label>6. Which package email appeared legitimate?</label><br>
+<select id="q6"><option>Choose</option><option>Email A</option><option value="1">Email B</option></select><br><br>
+
+<label>7. What is the first STOP step?</label><br>
+<select id="q7"><option>Choose</option><option value="1">Stop</option><option>Observe</option><option>Proceed</option><option>Report</option></select><br><br>
+
+<label>8. Safest verification method?</label><br>
+<select id="q8"><option>Choose</option><option>Reply to email</option><option value="1">Visit official website directly</option><option>Click link</option><option>Call email number</option></select><br><br>
+
+<label>9. What should you do with suspicious messages?</label><br>
+<select id="q9"><option>Choose</option><option>Ignore</option><option value="1">Report to IT/security</option><option>Forward widely</option><option>Post online</option></select><br><br>
+
+<label>10. Best summary?</label><br>
+<select id="q10"><option>Choose</option><option>Click first</option><option value="1">Pause, verify, and report</option><option>Trust logos</option><option>Ignore email</option></select><br><br>
+
+<button onclick="gradeSummative()">Submit Assessment</button>
+</div>
+<div id="quiz"></div></div></section>
+<section class="screen"><div class="card"><h2>Completion Dashboard</h2>
+<p>✓ Defined phishing and its risks</p>
+<p>✓ Identified phishing indicators</p>
+<p>✓ Distinguished legitimate and phishing messages</p>
+<p>✓ Applied verification strategies</p>
+<hr>
+<p>🏆 Threat Detective</p>
+<p>📧 Email Analyst</p>
+<p>🛡 Cyber Defender</p>
+</div></section>
+<section class="screen"><div class="card"><h2>Certificate of Completion</h2>
+<p><strong>Recognizing and Avoiding Phishing Attacks</strong></p>
+<input id="name" placeholder="Enter your name">
+<button onclick="cert()">Generate Certificate</button>
+<div id="cert"></div></div></section>
+<section class="screen"><div class="card"><h2>Support • Privacy • References</h2><p>Original e-learning module developed by Brittan Cook for WGU D299</p></div></section>
+
+<div class="nav"><button onclick="prev()">Previous</button><button onclick="next()">Next</button></div>
+</main>
+<script>
+const screens=document.querySelectorAll('.screen');let c=0;
+function update(){screens.forEach((s,i)=>s.classList.toggle('active',i===c));label.textContent=`Screen ${c+1} of ${screens.length}`;bar.style.width=((c+1)/screens.length*100)+'%'}
+function next(){if(c<screens.length-1){c++;update()}}
+function prev(){if(c>0){c--;update()}}
+function msg(id,t){document.getElementById(id).innerHTML='<div class="feedback">'+t+'</div>'}
+function gradeSummative(){
+let score=0;
+for(let i=1;i<=10;i++){if(document.getElementById('q'+i).value==='1')score++;}
+let pct=Math.round(score*10);
+let pass=pct>=80;
+document.getElementById('quiz').innerHTML='<div class="feedback"><strong>Score: '+pct+'%</strong><br>Status: '+(pass?'PASS':'NOT YET MASTERED')+'<br><button onclick="location.reload()">Retake Assessment</button></div>';
+}
+function finishQuiz(score){
+let pass=score>=80;
+document.getElementById('quiz').innerHTML='<div class="feedback"><strong>Score: '+score+'%</strong><br>Status: '+(pass?'PASS':'NOT YET MASTERED')+'<br><button onclick="location.reload()">Retake Assessment</button></div>';
+}
+function checkAnswer(id,correct){
+let msg=correct?'✓ Correct. Well done.':'⚠ Not quite. Review the content and try again.';
+if(id==='stopq' && correct){msg='✓ Correct. The STOP process begins by pausing before taking action.';}
+if(id==='takeaway' && correct){msg='✓ Correct. Effective phishing prevention depends on pausing, verifying, and reporting.';}
+document.getElementById(id).innerHTML='<div class="feedback">'+msg+'</div>';
+}
+function cert(){
+const n=document.getElementById('name').value||'Learner';
+const d=new Date().toLocaleDateString();
+document.getElementById('cert').innerHTML='<div class="feedback"><h3>Certificate of Completion</h3><p>Awarded to: <strong>'+n+'</strong></p><p>Successfully completed Recognizing and Avoiding Phishing Attacks</p><p>Date: '+d+'</p><p>Original e-learning module developed by Brittan Cook for WGU D299</p></div>';
+}
+update();
+</script>
+</body></html>
