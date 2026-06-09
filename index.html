@@ -19,6 +19,17 @@ button{padding:10px 14px;border:none;border-radius:8px;background:#0f172a;color:
 .nav{display:flex;justify-content:space-between;margin-top:20px}
 img{max-width:100%;border-radius:8px}
 input{padding:8px}
+
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:16px}
+.icon-card{background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:16px;text-align:center}
+.icon-card h3{margin-top:0}
+.process-flow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0}
+.flow-step{background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;padding:12px 16px;font-weight:bold}
+.takeaway-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+
+.highlight-card{background:#fffbeb;border-left:6px solid #f59e0b;padding:16px;border-radius:10px;margin:12px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -28,18 +39,39 @@ input{padding:8px}
 </header>
 <main>
 
-<section class="screen active"><div class="hero"><h1>Think Before You Click</h1><p>Every day, cybercriminals use email, text messages, phone calls, and fake websites to trick people into revealing information, transferring money, or compromising workplace systems. Learn how to recognize phishing attempts, evaluate evidence, and respond safely.</p></div></section>
+<section class="screen active"><div class="hero"><div style="font-size:4rem;margin-bottom:8px">🛡️</div><h1>Think Before You Click</h1><p>Every day, cybercriminals use email, text messages, phone calls, and fake websites to trick people into revealing information, transferring money, or compromising workplace systems. Learn how to recognize phishing attempts, evaluate evidence, and respond safely.</p></div></section>
 <section class="screen"><div class="card"><h2>How To Use</h2><p><strong>Estimated Time:</strong> 20–25 minutes</p><ul><li>Learn how phishing attacks work</li><li>Identify common phishing tactics and warning signs</li><li>Analyze realistic workplace scenarios</li><li>Practice evaluating suspicious messages</li><li>Complete a final assessment to demonstrate mastery</li></ul></div></section>
-<section class="screen"><div class="card"><h2>Learning Objectives</h2><ul><li>Define phishing</li><li>Identify indicators</li><li>Distinguish messages</li><li>Apply verification</li></ul></div></section>
-<section class="screen"><div class="card"><h2>Why Phishing Matters</h2><p><strong>Workplace Example:</strong> An HR employee receives an urgent request to change an employee’s direct deposit information before payroll closes. The request appears legitimate, but it is fraudulent. The employee’s paycheck is redirected to a criminal-controlled account.</p><h3>Consequences for Individuals</h3><ul><li>Identity theft</li><li>Financial fraud</li><li>Account compromise</li></ul><h3>Consequences for Organizations</h3><ul><li>Payroll fraud</li><li>Data breaches</li><li>Operational disruption</li><li>Reputational damage</li></ul></div></section>
+<section class="screen"><div class="card"><h2>Learning Objectives</h2><p><strong>After completing this training, you will be able to:</strong></p><div class="icon-grid"><div class="icon-card">✓ Recognize common phishing attacks</div><div class="icon-card">✓ Evaluate suspicious emails, texts, and calls</div><div class="icon-card">✓ Verify requests using trusted methods</div><div class="icon-card">✓ Report phishing attempts appropriately</div></div></div></section>
+<section class="screen"><div class="card"><h2>Why Phishing Matters</h2>
+<div class="highlight-card"><strong>⚠ Workplace Incident</strong><br>An HR employee receives an urgent request to change an employee’s direct deposit information before payroll closes. The request appears legitimate, but it is fraudulent.</div>
+<div class="two-col">
+<div class="icon-card"><h3>👤 Individual Impact</h3><ul><li>Identity theft</li><li>Financial fraud</li><li>Account compromise</li></ul></div>
+<div class="icon-card"><h3>🏢 Organizational Impact</h3><ul><li>Payroll fraud</li><li>Data breaches</li><li>Operational disruption</li><li>Reputational damage</li></ul></div>
+</div></div></section>
 <section class="screen"><div class="card"><h2>Poll</h2>
 <p>Have you ever received a suspicious email?</p>
 <button onclick="msg('poll','Many people receive phishing emails every week.')">Yes</button>
 <button onclick="msg('poll','Phishing attempts are extremely common. Stay alert.')">No</button>
 <button onclick="msg('poll','This module will help you recognize them.')">Not Sure</button>
 <div id="poll"></div></div></section>
-<section class="screen"><div class="card"><h2>What Is Phishing?</h2><p>Phishing is a social engineering attack that attempts to trick people into revealing information, clicking malicious links, opening harmful attachments, transferring money, or taking other unsafe actions.</p><h3>How Phishing Works</h3><ol><li>Attacker impersonates a trusted source</li><li>Message creates urgency or trust</li><li>Recipient takes action</li><li>Information, money, or access is compromised</li></ol></div></section>
-<section class="screen"><div class="card"><h2>Types of Phishing</h2><h3>Email Phishing</h3><p>Mass-distributed phishing emails.</p><h3>Spear Phishing</h3><p>Targeted messages aimed at specific individuals.</p><h3>Smishing</h3><p>Phishing attacks delivered through text messages.</p><h3>Vishing</h3><p>Phishing attacks delivered through phone calls.</p></div></section>
+<section class="screen"><div class="card"><h2>What Is Phishing?</h2>
+<p>Phishing is a social engineering attack that attempts to trick people into taking unsafe actions.</p>
+<div class="process-flow">
+<div class="flow-step">🎭 Attacker</div>
+<div class="flow-step">📧 Fake Message</div>
+<div class="flow-step">🤝 Trust</div>
+<div class="flow-step">🖱️ Action</div>
+<div class="flow-step">⚠️ Compromise</div>
+</div>
+<p>Attackers create urgency and exploit trust to encourage action before verification occurs.</p>
+</div></section>
+<section class="screen"><div class="card"><h2>Types of Phishing</h2>
+<div class="icon-grid">
+<div class="icon-card"><h3>📧 Email Phishing</h3><p>Mass-distributed phishing emails.</p><p><em>"Verify your account immediately."</em></p></div>
+<div class="icon-card"><h3>👤 Spear Phishing</h3><p>Targeted attacks aimed at specific people.</p><p><em>"Hi David, review this payroll document."</em></p></div>
+<div class="icon-card"><h3>📱 Smishing</h3><p>Phishing delivered through text messages.</p><p><em>"Package delivery failed."</em></p></div>
+<div class="icon-card"><h3>☎️ Vishing</h3><p>Phishing delivered through phone calls.</p><p><em>"This is your bank's fraud department."</em></p></div>
+</div></div></section>
 <section class="screen"><div class="card"><h2>Formative Assessment #1</h2>
 <p>You receive a text message stating that your package delivery failed and that you must click a link within 24 hours to avoid cancellation. What type of phishing attack is being used?</p>
 <button onclick="checkAnswer('f1',false)">Email Phishing</button>
@@ -47,7 +79,16 @@ input{padding:8px}
 <button onclick="checkAnswer('f1',true)">Smishing</button>
 <button onclick="checkAnswer('f1',false)">Vishing</button>
 <div id="f1"></div></div></section>
-<section class="screen"><div class="card"><h2>Warning Signs</h2><h3>STOP and CHECK</h3><ul><li><strong>Urgency:</strong> Pressure to act immediately</li><li><strong>Unexpected Request:</strong> Especially involving money or credentials</li><li><strong>Suspicious Sender:</strong> Misspellings or unusual domains</li><li><strong>Links & Attachments:</strong> Unexpected files or destinations</li><li><strong>Sensitive Information Requests:</strong> Passwords or financial information</li><li><strong>Independent Verification:</strong> Verify through trusted channels</li></ul></div></section>
+<section class="screen"><div class="card"><h2>Warning Signs</h2>
+<h3>STOP & CHECK</h3>
+<div class="icon-grid">
+<div class="icon-card"><h3>⚠️ Urgency</h3><p>Pressure to act immediately.</p></div>
+<div class="icon-card"><h3>❓ Unexpected Request</h3><p>Especially involving money or credentials.</p></div>
+<div class="icon-card"><h3>🌐 Suspicious Sender</h3><p>Misspellings or unusual domains.</p></div>
+<div class="icon-card"><h3>📎 Links & Attachments</h3><p>Unexpected files or destinations.</p></div>
+<div class="icon-card"><h3>🔒 Sensitive Information</h3><p>Passwords or financial information.</p></div>
+<div class="icon-card"><h3>✔️ Verify Independently</h3><p>Use trusted channels.</p></div>
+</div></div></section>
 <section class="screen"><div class="card"><div class="casefile">CASE FILE #1 Maria</div>
 <img src="images/maria-email.jpg" alt="Maria email">
 <p>Which indicator most strongly suggests this message may be phishing?</p>
@@ -98,11 +139,16 @@ input{padding:8px}
 <button onclick="checkAnswer('f3',false)">Ignore security warnings</button>
 <div id="f3"></div></div></section>
 <section class="screen"><div class="card"><h2>STOP Process</h2>
-<img src="images/stop.jpg" alt="STOP process">
+<div class="icon-grid">
+<div class="icon-card"><h3>⏸ STOP</h3><p>Pause before taking action.</p></div>
+<div class="icon-card"><h3>🧠 THINK</h3><p>Review evidence and warning signs.</p></div>
+<div class="icon-card"><h3>✔ VERIFY</h3><p>Use trusted, independent channels.</p></div>
+<div class="icon-card"><h3>🚩 REPORT</h3><p>Notify IT or security personnel.</p></div>
+</div>
 <p>A message demands immediate action. What is the FIRST step in the STOP process?</p>
-<button onclick="checkAnswer('stopq',false)">Observe</button>
+<button onclick="checkAnswer('stopq',false)">Think</button>
 <button onclick="checkAnswer('stopq',true)">Stop</button>
-<button onclick="checkAnswer('stopq',false)">Proceed</button>
+<button onclick="checkAnswer('stopq',false)">Verify</button>
 <button onclick="checkAnswer('stopq',false)">Report</button>
 <div id="stopq"></div>
 </div></section>
@@ -121,13 +167,18 @@ input{padding:8px}
 <button onclick="checkAnswer('report',false)">Post it online</button>
 <div id="report"></div></div></section>
 <section class="screen"><div class="card"><h2>Key Takeaways</h2>
-<p>Which action best summarizes what you have learned?</p>
+<div class="takeaway-grid">
+<div class="icon-card"><h3>⏸ Pause</h3><p>Do not react immediately.</p></div>
+<div class="icon-card"><h3>🔍 Verify</h3><p>Use independent channels.</p></div>
+<div class="icon-card"><h3>🧠 Evaluate</h3><p>Look for warning signs.</p></div>
+<div class="icon-card"><h3>🚩 Report</h3><p>Notify IT or security.</p></div>
+</div>
+<p><strong>Which action best summarizes what you have learned?</strong></p>
 <button onclick="checkAnswer('takeaway',false)">Click first, verify later</button>
 <button onclick="checkAnswer('takeaway',true)">Pause, verify, and report suspicious messages</button>
 <button onclick="checkAnswer('takeaway',false)">Ignore all emails</button>
 <button onclick="checkAnswer('takeaway',false)">Trust messages with logos</button>
-<div id="takeaway"></div>
-</div></section>
+<div id="takeaway"></div></div></section>
 <section class="screen"><div class="card"><h2>Review Challenge</h2>
 <p><strong>Scenario 1:</strong> Which indicator should concern Maria most?</p>
 <button onclick="checkAnswer('review1',false)">Professional formatting</button>
@@ -186,7 +237,7 @@ input{padding:8px}
 <button onclick="gradeSummative()">Submit Assessment</button>
 </div>
 <div id="quiz"></div></div></section>
-<section class="screen"><div class="card"><h2>Completion Dashboard</h2>
+<section class="screen"><div class="card"><h2>Completion Dashboard</h2><div class="highlight-card"><strong>Skills Demonstrated</strong><br>✓ Recognized phishing indicators<br>✓ Evaluated suspicious messages<br>✓ Applied verification procedures<br>✓ Reported phishing attempts</div>
 <p>✓ Defined phishing and its risks</p>
 <p>✓ Identified phishing indicators</p>
 <p>✓ Distinguished legitimate and phishing messages</p>
@@ -201,7 +252,15 @@ input{padding:8px}
 <input id="name" placeholder="Enter your name">
 <button onclick="cert()">Generate Certificate</button>
 <div id="cert"></div></div></section>
-<section class="screen"><div class="card"><h2>Support • Privacy • References</h2><p>Original e-learning module developed by Brittan Cook for WGU D299</p></div></section>
+<section class="screen"><div class="card"><h2>Support • Privacy • References</h2>
+<h3>Support</h3>
+<p>If you suspect a phishing attempt, stop and evaluate the message, verify through a trusted channel, and report suspicious activity to your IT or security team.</p>
+<h3>Privacy</h3>
+<p>This module does not collect, store, or transmit learner-entered personal information.</p>
+<h3>References</h3>
+<ul><li>CISA</li><li>FTC</li><li>NIST</li></ul>
+<hr>
+<p><strong>Original e-learning module developed by Brittan Cook for WGU D299</strong></p></div></section>
 
 <div class="nav"><button onclick="prev()">Previous</button><button onclick="next()">Next</button></div>
 </main>
